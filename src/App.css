@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* --------------------- HOME SCREEN STYLING --------------------- */
+
+.start--container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.start--title {
+    color: #293264;
+    margin-bottom: 0.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.start--text {
+    color: #293264;
+    margin-bottom: 1.5rem;
+    
 }
 
-.App-link {
-  color: #61dafb;
+.start--btn {
+    background-color: #4D5B9E;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* --------------------- QUESTIONS STYLING --------------------- */
+.trivia-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-evenly;
+    text-align: center;
+    padding: 0 1rem;
+    font-size: 0.8rem;
 }
