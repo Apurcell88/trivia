@@ -16,18 +16,25 @@ function App() {
     getTrivia();
   }, [])
 
-  const questions = trivia.map(data => (
-    <h2 className='question' key={data.question}>
+  // need to loop over data.incorrect_answers
+  const questions = trivia.map((data, index) => (
+    <div>
+      <h2 className='question' key={data.question}>
       {data.question}
-    </h2>
+      </h2>
+      <button>{data.correct_answer}</button>
+      {data.incorrect_answers.map(answer => {
+        return (
+          <button>{answer}</button>
+        )
+      })}
+    </div>
   ))
 
   return (
     <div className='trivia-container'>
       {startTrivia ? '' : <Start setStartTrivia={setStartTrivia}/>}
-      <div className>
-        {startTrivia && questions}
-      </div>
+      {startTrivia && questions}
     </div>
   );
 }
