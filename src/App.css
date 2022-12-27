@@ -45,3 +45,32 @@
     padding: 0 1rem;
     font-size: 0.8rem;
 }
+
+.question {
+    color:#4D5B9E;
+    font-size: 1.3rem;
+}
+
+.answer {
+    width: 6rem;
+    height: 3rem;
+    margin: 0.8rem;
+    border-radius: 15px;
+}
+
+.check-answers {
+    width: 15rem;
+    height: 4rem;
+    font-size: 1rem;
+    font-weight: 600;
+    align-self: center;
+    border-radius: 10px;
+    background-color: #4D5B9E;
+    color: white;
+    transition: 0.1s all;
+}
+
+.check-answers:active {
+    transform: scale(0.96);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.28);
+}

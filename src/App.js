@@ -16,25 +16,60 @@ function App() {
     getTrivia();
   }, [])
 
-  // need to loop over data.incorrect_answers
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+
+    return array;
+  }
+
+  console.log(trivia);
+
+  // create a function that applies style to clicked answer
+  function clickedAnswer() {
+
+  }
+
+  // combine correct answer string into the incorrect answers array
+
+  
   const questions = trivia.map((data, index) => (
     <div>
       <h2 className='question' key={data.question}>
       {data.question}
       </h2>
-      <button>{data.correct_answer}</button>
+      <button className='answer' onCLick={clickedAnswer}>{data.correct_answer}</button>
       {data.incorrect_answers.map(answer => {
         return (
-          <button>{answer}</button>
+          <button className='answer' onCLick={clickedAnswer}>{answer}</button>
         )
       })}
     </div>
   ))
 
+  // const questions = trivia.map((data, index) => (
+  //   <div>
+  //     <h2 className='question' key={data.question}>
+  //     {data.question}
+  //     </h2>
+  //     <button>{data.correct_answer}</button>
+  //     {data.incorrect_answers.map(answer => {
+  //       return (
+  //         <button>{answer}</button>
+  //       )
+  //     })}
+  //   </div>
+  // ))
+
   return (
     <div className='trivia-container'>
       {startTrivia ? '' : <Start setStartTrivia={setStartTrivia}/>}
       {startTrivia && questions}
+      <button className='check-answers'>Check answers</button>
     </div>
   );
 }
