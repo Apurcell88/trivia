@@ -31,7 +31,8 @@ function App() {
 
   // create a function that applies style to clicked answer
   function clickedAnswer() {
-
+    // change background color
+    
   }
 
   // combine correct answer string into the incorrect answers array
@@ -67,9 +68,8 @@ function App() {
 
   return (
     <div className='trivia-container'>
-      {startTrivia ? '' : <Start setStartTrivia={setStartTrivia}/>}
       {startTrivia && questions}
-      <button className='check-answers'>Check answers</button>
+      {startTrivia ? <button className='check-answers'>Check answers</button> : <Start setStartTrivia={setStartTrivia}/>}
     </div>
   );
 }
